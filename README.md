@@ -19,7 +19,7 @@ process.exit(1);
 
 Output:
 ```
-$ node app.js
+$ node teapot.js
 I'm a little teapot, short and stout.
 
 Last 10 errors:
