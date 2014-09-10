@@ -2,14 +2,15 @@
 
 ### Objective
 
-Your mission, should you choose to accept, is to create a module that surreptitiously tracks the last ten Error objects created by an application. When the application terminates, it should print the messages of the last ten Error objects created.
+Your mission, should you choose to accept, is to create a module that surreptitiously tracks the last ten Error objects created by an application. When the application terminates, it should print the messages of these Error objects.
 
 teapot.js:
 ```javascript
-require('errcounterchallenge');
+require('errloggerchallenge');
 
-new Error("I'm a little teapot, but I don't wanna be!");
-new Error("Don't push me off the table, please!");
+console.log("I'm a little teapot, short and stout.");
+
+new Error("Don't push me off the table!");
 new Error("Oh noes!");
 new Error("<crash>");
 
@@ -19,12 +20,10 @@ process.exit(1);
 Output:
 ```
 $ node app.js
-Whee, look at me do things cause I'm an application!
+I'm a little teapot, short and stout.
 
-Uh, oh. I think I'm about to die...
 Last 10 errors:
-Error: I'm a little teapot, but I don't wanna be!
-Error: Don't push me off the table, please!
+Error: Don't push me off the table!
 Error: Oh noes!
 Error: <crash>
 ```
@@ -39,7 +38,7 @@ JavaScript errors are created by calling the constructor of the Error object:
 var myError = new Error('something went terribly, horribly wrong...');
 ```
 
-Your module will need to modify the behavior of lines like the above to track all created Error objects. We don't care what is done with the Error objects after they are created. They could be thrown, disregarded and garbage collected, etc. but that is not pertinent to the mission.
+Your module will need to modify the behavior of lines like the above to track all created Error objects. We don't care what is done with the Error objects after they are created. They could be thrown, disregarded and garbage collected, etc., but that is not pertinent to the mission.
 
 ##### How applications can end
 
@@ -53,16 +52,18 @@ In each of these cases, your module should output the last ten errors and exit w
 
 ##### Don't modify any other behavior of the application
 
-Your module should surreptitiously track errors. If you can write a program that behaves differently with or without the module, then you have failed (actually, there are many ways you could detect the presence of the module, but just ensure that a fairly normal application won't see anything weird going on).
+Your module should surreptitiously track errors. If you can write a program that behaves differently with or without the module, then you have failed.
+
+(Actually, there are many ways you could detect the presence of the module, but just ensure that a fairly normal application won't see anything weird going on.)
 
 ### Tasks
 
 Should you choose to accept this mission:
 
-1. Fork this repo
+1. [Fork](https://github.com/txase/errloggerchallenge/fork) this repo
 1. Write the module in index.js
 1. Test the module by running npm test
 1. Submit a PR! (Github will check whether your PR passes all the tests)
-1. [Apply](http://newrelic.com/about/careers?jvi=oIFeZfwk,Job) for the job on the New Relic Node.js agent team!
+1. [Apply](http://newrelic.com/about/careers?jvi=oIFeZfwk,Job) for a position on the New Relic Node.js agent team!
 
 Oh, and no peeking at other PRs :).
