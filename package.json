@@ -1,0 +1,14 @@
+{
+  "name": "errloggingchallenge",
+  "version": "0.0.1",
+  "description": "Error logging challenge!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Chase Douglas <chase@newrelic.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tape": "^2.14.0"
+  }
+}
