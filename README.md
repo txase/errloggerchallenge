@@ -1,4 +1,4 @@
-# Error Counter Challenge!!!
+# Error Logger Challenge!!!
 
 ### Objective
 
